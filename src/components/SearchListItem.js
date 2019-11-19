@@ -5,14 +5,16 @@ export default function SearchListItem(props) {
     const mapQuotes = () => { 
         if(props.Quotes !== null) { 
             return props.Quotes.slice(0,20).map((quote, i) => {  
-                return <li key={i}>
-                    Carrier: {findCarrier(quote.OutboundLeg.CarrierIds[0])}
-                    Direct: {quote.Direct ? 'Yes ' : 'No '}
-                    Price: ${quote.MinPrice + ' '}
-                    Departure Date: {formatDate(quote.OutboundLeg.DepartureDate) + ' '}
-                    Destination City: {findCity(quote.OutboundLeg.DestinationId) + ' '}
-                    Origin City: {findCity(quote.OutboundLeg.OriginId) + ' '}
-                </li>
+                return (
+                    <div> 
+                        {findCarrier(quote.OutboundLeg.CarrierIds[0]) + ' '}
+                        {quote.Direct ? 'Yes ' : 'No '}
+                        {formatDate(quote.OutboundLeg.DepartureDate) + ' '}
+                        {findCity(quote.OutboundLeg.OriginId) + ' '}
+                        {findCity(quote.OutboundLeg.DestinationId) + ' '}
+                        {quote.MinPrice + ' '}
+                    </div>
+                )
             })
         }
     }
@@ -32,16 +34,14 @@ export default function SearchListItem(props) {
 
     const findCity = (id) => { 
         let foundCity = props.Places.find(place => place.PlaceId === id)
-        return foundCity.CityName + ' Airport: ' + foundCity.Name
+        return foundCity.CityName
     }
                 
 
 
     return (
         <div>
-            <ul>
-                {mapQuotes()}
-            </ul>
+            {mapQuotes()}
         </div>
     )
 }

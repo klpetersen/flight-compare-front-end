@@ -34,10 +34,11 @@ export default class Search extends Component {
     return (
         <div className='search-container'>
            <SearchList 
-           Carriers={this.state.Carriers} 
-           Currencies={this.state.Currencies} 
-           Places={this.state.Places}
-           Quotes={this.state.Quotes}/> 
+              Carriers={this.state.Carriers} 
+              Currencies={this.state.Currencies} 
+              Places={this.state.Places}
+              Quotes={this.state.Quotes}
+            /> 
         </div>
     )
     }
