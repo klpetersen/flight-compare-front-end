@@ -6,13 +6,13 @@ export default function SearchListItem(props) {
         if(props.Quotes !== null) { 
             return props.Quotes.slice(0,20).map((quote, i) => {  
                 return (
-                    <div> 
-                        {findCarrier(quote.OutboundLeg.CarrierIds[0]) + ' '}
-                        {quote.Direct ? 'Yes ' : 'No '}
-                        {formatDate(quote.OutboundLeg.DepartureDate) + ' '}
-                        {findCity(quote.OutboundLeg.OriginId) + ' '}
-                        {findCity(quote.OutboundLeg.DestinationId) + ' '}
-                        {quote.MinPrice + ' '}
+                    <div key={i} className='flight-detail-card'> 
+                        <h2>{findCarrier(quote.OutboundLeg.CarrierIds[0]) + ' '}</h2>
+                        <p className='direct-flight'>{quote.Direct ? 'nonstop ' : 'connections '}</p>
+                        <p className='departure-date'>{formatDate(quote.OutboundLeg.DepartureDate) + ' '}</p>
+                        <p className='departure-city'>{findCity(quote.OutboundLeg.OriginId) + ' '}</p>
+                        <p className='arrival-city'>{findCity(quote.OutboundLeg.DestinationId) + ' '}</p>
+                        <p className='price'>{quote.MinPrice + ' '}</p>
                     </div>
                 )
             })
