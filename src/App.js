@@ -6,13 +6,15 @@ import LoginSign from './containers/LoginSign'
 
 
 
+
 function App() {
   return (
     <Router>
       <div>
           <Switch> 
               <Route exact path='/' render={() => <LoginSign />}/> 
-              <Route exact path='/search' render={() => <Search />}/> 
+              
+              <Route exact path='/search/results' render={() =><Search />}/> 
           </Switch>
       </div>
     </Router>

@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import SearchList from '../components/SearchList'
+import SearchBar from '../components/SearchBar'
 
 export default class Search extends Component {
 
@@ -34,14 +35,15 @@ export default class Search extends Component {
       
     render() {
     return (
-        <div className='search-container'>
-           <SearchList 
-              Carriers={this.state.Carriers} 
-              Currencies={this.state.Currencies} 
-              Places={this.state.Places}
-              Quotes={this.state.Quotes}
-            /> 
-        </div>
+          <div className='search-container'>
+            <SearchBar /> 
+            <SearchList 
+                Carriers={this.state.Carriers} 
+                Currencies={this.state.Currencies} 
+                Places={this.state.Places}
+                Quotes={this.state.Quotes}
+              /> 
+          </div>
     )
     }
 }

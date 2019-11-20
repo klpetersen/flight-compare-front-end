@@ -1,7 +1,48 @@
+
+/* SIGN UP */
+.login-signup-window { 
+  background-color: cadetblue; 
+  width: 100vw; 
+  height: 100vh; 
+}
+
+.form-container { 
+  background-color: brown; 
+  width: 50vw; 
+  height: 50vh; 
+  position: fixed; 
+  top: 25%; 
+  left: 25%; 
+  border-radius: 15px; 
+}
+
+.sign-up-form {
+  text-align: center;  
+  margin-top: 13%;    
+}
+
+.sign-up-form input { 
+  margin: 20px; 
+  height: 40px;
+  width: 300px;  
+  font-size: 50px; 
+  padding: 10px; 
+}
+
+.sign-up-form button { 
+  height: 40px; 
+  width: 80px; 
+  border-radius: 12px; 
+  font-size: 15px; 
+}
+
+
+/* SEARCH */
 .search-container { 
   background-color: brown;
   width: 100vw; 
   height: 100vh;
+  position: relative; 
 }
 
 .search-list-container { 
@@ -24,4 +65,15 @@
 .price { 
   font-size: 30px; 
   float: right; 
+}
+
+/* Search Bar Container */
+
+.search-bar-container { 
+  background-color: gray; 
+  top: 5%; 
+  left: 10%; 
+  position: fixed; 
+  width: 80vw; 
+  height: 40px; 
 }
