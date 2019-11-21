@@ -3,7 +3,7 @@ import React, { useRef, useEffect} from 'react'
 // import Login from '../components/Login'
 import SignUp from '../components/SignUp'
 
-function LoginSign() {
+function LoginSign(props) {
     let item = useRef(null); 
 
     useEffect(() => {
@@ -13,7 +13,7 @@ function LoginSign() {
     return (
         <div className='login-signup-window' ref={el => {item = el}}>
             <div className='form-container'>
-                <SignUp /> 
+                <SignUp {...props}/> 
             </div>
         </div>
     )
