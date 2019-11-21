@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import SearchList from '../components/SearchList'
 import SearchBar from '../components/SearchBar'
+import SavedSearches from '../components/SavedSearches'
 
 export default class Search extends Component {
 
@@ -43,7 +44,8 @@ export default class Search extends Component {
                 Places={this.state.Places}
                 Quotes={this.state.Quotes}
                 user_id={this.props.user_id}
-              /> 
+            /> 
+            <SavedSearches user_id={this.props.user_id}/> 
           </div>
     )
     }

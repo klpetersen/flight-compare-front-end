@@ -24,10 +24,13 @@ export default class SearchBar extends Component {
         return (
             <div className='search-bar-container'>
                 <div> 
-                    <form onSubmit={this.handleSubmit}> 
-                        <input name ='origin' type='text' placeholder='Origin Airport Code' onChange={this.handleChange}/>
-                        <input name='destination' type='text' placeholder='Dest Airport Code' onChange={this.handleChange}/> 
-                        <input name='date' type='text' placeholder='Date 0000-00-00' onChange={this.handleChange}/> 
+                    <form onSubmit={this.handleSubmit}>
+                        <label>FROM</label> 
+                            <input name ='origin' type='text' placeholder='Airport Code' onChange={this.handleChange}/>
+                        <label>TO</label>
+                            <input name='destination' type='text' placeholder='Airport Code' onChange={this.handleChange}/> 
+                        <label>WHEN</label>
+                            <input name='date' type='text' placeholder='0000-00-00' onChange={this.handleChange}/> 
                         <button type='submit'>Submit</button>
                     </form>
                 </div>
