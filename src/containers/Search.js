@@ -42,6 +42,7 @@ export default class Search extends Component {
                 Currencies={this.state.Currencies} 
                 Places={this.state.Places}
                 Quotes={this.state.Quotes}
+                user_id={this.props.user_id}
               /> 
           </div>
     )
