@@ -13,6 +13,7 @@ export default function SearchListItem(props) {
                         <p className='departure-city'>{findCity(quote.OutboundLeg.OriginId) + ' '}</p>
                         <p className='arrival-city'>{findCity(quote.OutboundLeg.DestinationId) + ' '}</p>
                         <p className='price'>{quote.MinPrice + ' '}</p>
+                        <button >Save</button>
                     </div>
                 )
             })
@@ -57,40 +58,3 @@ export default function SearchListItem(props) {
         </div>
     )
 }
-
-// Carriers: Array(4)
-// 0:
-// CarrierId: 851
-// Name: "Alaska Airlines"
-// __proto__: Object
-// 1: {CarrierId: 1065, Name: "Frontier Airlines"}
-// 2: {CarrierId: 1721, Name: "Sun Country Airlines"}
-// 3: {CarrierId: 1793, Name: "United"}
-// length: 4
-// __proto__: Array(0)
-// Currencies: Array(1)
-// 0:
-// Code: "USD"
-// DecimalDigits: 2
-// DecimalSeparator: "."
-// RoundingCoefficient: 0
-// SpaceBetweenAmountAndSymbol: false
-// Symbol: "$"
-// SymbolOnLeft: true
-// ThousandsSeparator: ","
-// __proto__: Object
-// length: 1
-// __proto__: Array(0)
-// Places: Array(2)
-// 0:
-// CityId: "CHIA"
-// CityName: "Chicago"
-// CountryName: "United States"
-// IataCode: "ORD"
-// Name: "Chicago O'Hare International"
-// PlaceId: 73076
-// SkyscannerCode: "ORD"
-// Type: "Station"
-// __proto__: Object
-// 1: {PlaceId: 81727, IataCode: "SFO", Name: "San Francisco International", Type: "Station", SkyscannerCode: "SFO", …}
-// length: 2

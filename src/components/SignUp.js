@@ -4,7 +4,8 @@ export default class SignUp extends Component {
 
     state = { 
         username: null, 
-        password: null
+        password: null, 
+        login: false
     }
 
     handleChange = (event) => { 
@@ -19,38 +20,59 @@ export default class SignUp extends Component {
         fetch('http://localhost:3000/users')
             .then(resp => resp.json())
             .then(data => this.findUser(data))
-        }
+    }
+
+    handleClick = () => { 
+        this.setState({ 
+            login: true
+        })
+    }
         
-        findUser = (users) => { 
-            let foundUser = users.find(user => user.username === this.state.username)
-           if (foundUser) {
-            alert('User already exists!')
-           } else { 
-            fetch('http://localhost:3000/users', {
-                method: "POST",
-                headers: {
-                    'Content-Type': 'application/json',
-                    Accept: 'application/json'
-                },
-                body: JSON.stringify({
-                    username: this.state.username, 
-                    password: this.state.password
-                })
-                }).then(resp=>resp.json())
-                .then(data=> {
-                this.props.setCurrentUser(data)
-                this.props.history.push('/search')} )
-                alert('Profile created!')
-           }
-        }
+    findUser = (users) => { 
+        let foundUser = users.find(user => user.username === this.state.username) 
+            if(this.state.login === false) {
+                if (foundUser) {
+                    alert('User already exists!') 
+                } else {
+                fetch('http://localhost:3000/users', {
+                    method: "POST",
+                    headers: {
+                        'Content-Type': 'application/json',
+                        Accept: 'application/json'
+                    },
+                    body: JSON.stringify({
+                        username: this.state.username, 
+                        password: this.state.password
+                    })
+                    }).then(resp=>resp.json())
+                    .then(data=> {
+                    this.props.setCurrentUser(data)
+                    this.props.history.push('/search')} )
+                    alert('Profile created!')
+                } 
+            } else if (this.state.login === true) { 
+                if (this.state.password === foundUser.password) { 
+                    this.props.history.push('/search')
+                } else { 
+                    alert('Please retry!')
+                }
+            }
+    }
 
 
 
     render() {
-        console.log(this.props)
         return (
             <div className='sign-up-form' >
-                <h1>Sign Up</h1>
+                {this.state.login 
+                ? 
+                <h1>Login</h1> 
+                : 
+                <div>
+                    <h1>Sign Up</h1>
+                    <button className='login-btn' onClick={() => this.handleClick()}>Already a User?</button>
+                </div>}
+
                 <form onSubmit={this.handleSubmit}> 
                     <div>
                         <input type='text' name='username' placeholder='Username' onChange={this.handleChange}/> 
@@ -58,7 +80,8 @@ export default class SignUp extends Component {
                     <div>
                         <input type='text' name='password' placeholder='Password' onChange={this.handleChange} />
                     </div>
-                    <button type='submit' value='Submit'>Submit</button> 
+                    <button className='sign-up-btn' type='submit' value='Submit'>Submit</button> 
+                    
                 </form>
                 
             </div>
