@@ -10,9 +10,10 @@ export default class Search extends Component {
         Places: null, 
         Quotes: null
       }
-      
-    componentDidMount() { 
-      fetch("https://skyscanner-skyscanner-flight-search-v1.p.rapidapi.com/apiservices/browseroutes/v1.0/US/USD/en-US/RSW-sky/ORD-sky/2019-12-01", {
+
+    findFlight = (origin, destination, date) => {
+
+      fetch(`https://skyscanner-skyscanner-flight-search-v1.p.rapidapi.com/apiservices/browsedates/v1.0/US/USD/en-US/${origin}-sky/${destination}-sky/${date}`, {
         "method": "GET",
         "headers": {
           "x-rapidapi-host": "skyscanner-skyscanner-flight-search-v1.p.rapidapi.com",
@@ -20,8 +21,7 @@ export default class Search extends Component {
         }
       })
           .then(resp => resp.json())
-          .then(data => 
-              this.setState({
+          .then(data => this.setState({
               Carriers: data.Carriers, 
               Currencies: data.Currencies, 
               Places: data.Places, 
@@ -31,12 +31,12 @@ export default class Search extends Component {
           .catch(err => {
             console.log(err)
           })
-    }   
+    }
       
     render() {
     return (
           <div className='search-container'>
-            <SearchBar /> 
+            <SearchBar findFlight={this.findFlight} /> 
             <SearchList 
                 Carriers={this.state.Carriers} 
                 Currencies={this.state.Currencies} 

@@ -17,7 +17,10 @@ export default class SearchBar extends Component {
 
     handleSubmit = (event) => { 
         event.preventDefault(); 
+        this.props.findFlight(this.state.origin, this.state.destination, this.state.date)
     }
+
+    
 
 
     render() {

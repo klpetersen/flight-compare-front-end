@@ -3,8 +3,8 @@ import React from 'react'
 export default function SearchListItem(props) {
    
     const mapQuotes = () => { 
-        if(props.Quotes !== null) { 
-            return props.Quotes.slice(0,20).map((quote, i) => {  
+        if(props.Quotes !== null && props.Quotes !== undefined) { 
+            return props.Quotes.map((quote, i) => {  
                 return (
                     <div key={i} className='flight-detail-card'> 
                         <h2>{findCarrier(quote.OutboundLeg.CarrierIds[0]) + ' '}</h2>
@@ -16,6 +16,18 @@ export default function SearchListItem(props) {
                     </div>
                 )
             })
+        } else if (props.Quotes === undefined) { 
+           return (
+                <div> 
+                    <h2>Sorry, no flights found!</h2>
+                </div>
+                )
+        } else if (props.Quotes === null) { 
+            return (
+                <div> 
+                    <h2>Please search flights...</h2>
+                </div>
+            )
         }
     }
 
