@@ -13,8 +13,7 @@ function App() {
       <div>
           <Switch> 
               <Route exact path='/' render={() => <LoginSign />}/> 
-              
-              <Route exact path='/search/results' render={() =><Search />}/> 
+              <Route exact path='/search' render={() =><Search />}/> 
           </Switch>
       </div>
     </Router>
