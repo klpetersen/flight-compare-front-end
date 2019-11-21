@@ -8,13 +8,15 @@ import LoginSign from './containers/LoginSign'
 export default class App extends React.Component {
 
   state = { 
-    currentUser: null
+    currentUser: null, 
+    user_id: null
   }
 
 
   setCurrentUser = (user) => { 
     this.setState({ 
-      currentUser: user
+      currentUser: user,
+      user_id: user.id
     })
   }
 
@@ -30,7 +32,7 @@ export default class App extends React.Component {
       <div>
           <Switch> 
               <Route exact path='/' render={(routerProps) => <LoginSign currentUser={this.state.currentUser} setCurrentUser={this.setCurrentUser} {...routerProps} />}/> 
-              <Route exact path='/search' render={() =><Search  />}/> 
+              <Route exact path='/search' render={() =><Search user_id={this.state.user_id} />}/> 
           </Switch>
       </div>
     </Router>

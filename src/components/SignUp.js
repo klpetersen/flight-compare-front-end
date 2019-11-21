@@ -5,7 +5,7 @@ export default class SignUp extends Component {
     state = { 
         username: null, 
         password: null, 
-        login: false
+        login: false, 
     }
 
     handleChange = (event) => { 
@@ -52,12 +52,14 @@ export default class SignUp extends Component {
                 } 
             } else if (this.state.login === true) { 
                 if (this.state.password === foundUser.password) { 
+                    this.props.setCurrentUser(foundUser)
                     this.props.history.push('/search')
                 } else { 
                     alert('Please retry!')
                 }
             }
     }
+
 
 
 

@@ -5,15 +5,22 @@ export default function SearchListItem(props) {
     const mapQuotes = () => { 
         if(props.Quotes !== null && props.Quotes !== undefined) { 
             return props.Quotes.map((quote, i) => {  
+                let carrier = findCarrier(quote.OutboundLeg.CarrierIds[0])
+                let direct = quote.Direct ? 'nonstop' : 'connections'; 
+                let date = formatDate(quote.OutboundLeg.DepartureDate)
+                let departCity = findCity(quote.OutboundLeg.OriginId)
+                let destination = findCity(quote.OutboundLeg.DestinationId)
+                let price = quote.MinPrice
+
                 return (
                     <div key={i} className='flight-detail-card'> 
-                        <h2>{findCarrier(quote.OutboundLeg.CarrierIds[0]) + ' '}</h2>
-                        <p className='direct-flight'>{quote.Direct ? 'nonstop ' : 'connections '}</p>
-                        <p className='departure-date'>{formatDate(quote.OutboundLeg.DepartureDate) + ' '}</p>
-                        <p className='departure-city'>{findCity(quote.OutboundLeg.OriginId) + ' '}</p>
-                        <p className='arrival-city'>{findCity(quote.OutboundLeg.DestinationId) + ' '}</p>
-                        <p className='price'>{quote.MinPrice + ' '}</p>
-                        <button >Save</button>
+                        <h2>{carrier + ' '}</h2>
+                        <p className='direct-flight'>{direct}</p>
+                        <p className='departure-date'>{ date + ' '}</p>
+                        <p className='departure-city'>{ departCity + ' '}</p>
+                        <p className='destination'>{ destination + ' '}</p>
+                        <p className='price'>{price + ' '}</p>
+                        <button onClick={() => handleClick(carrier, direct, date, departCity, destination, price)}>Save</button>
                     </div>
                 )
             })
@@ -50,6 +57,25 @@ export default function SearchListItem(props) {
         return foundCity.CityName
     }
                 
+    const handleClick = (carrier, direct, date, departCity, destination, price) => { 
+        fetch('http://localhost:3000/searches', { 
+            method: 'POST', 
+            headers: {
+                'Content-Type': 'application/json',
+                Accept: 'application/json'
+            },
+            body: JSON.stringify({
+                user_id: props.user_id, 
+                baggage_fee: 0, 
+                price,
+                carrier,
+                direct, 
+                date, 
+                departCity, 
+                destination
+            })
+        })    
+    }
 
 
     return (
