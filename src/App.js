@@ -29,8 +29,8 @@ export default class App extends React.Component {
     <Router>
       <div>
           <Switch> 
-              <Route exact path='/' render={(routerProps) => <LoginSign setCurrentUser={this.setCurrentUser} {...routerProps} />}/> 
-              <Route exact path='/search' render={() =><Search />}/> 
+              <Route exact path='/' render={(routerProps) => <LoginSign currentUser={this.state.currentUser} setCurrentUser={this.setCurrentUser} {...routerProps} />}/> 
+              <Route exact path='/search' render={() =><Search  />}/> 
           </Switch>
       </div>
     </Router>
