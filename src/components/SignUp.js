@@ -16,15 +16,41 @@ export default class SignUp extends Component {
 
     handleSubmit = (event) => { 
         event.preventDefault() 
-        console.log(this.state.username, this.state.password)
-    }
+        fetch('http://localhost:3000/users')
+            .then(resp => resp.json())
+            .then(data => this.findUser(data))
+        }
+        
+        findUser = (users) => { 
+            let foundUser = users.find(user => user.username === this.state.username)
+           if (foundUser) {
+            alert('User already exists!')
+           } else { 
+            fetch('http://localhost:3000/users', {
+                method: "POST",
+                headers: {
+                    'Content-Type': 'application/json',
+                    Accept: 'application/json'
+                },
+                body: JSON.stringify({
+                    username: this.state.username, 
+                    password: this.state.password
+                })
+                }).then(resp=>resp.json())
+                .then(data=> {
+                this.props.setCurrentUser(data)
+                this.props.history.push('/search')} )
+                alert('Profile created!')
+           }
+        }
 
 
 
     render() {
-        console.log(this.state.username, this.state.password)
+        console.log(this.props)
         return (
             <div className='sign-up-form' >
+                <h1>Sign Up</h1>
                 <form onSubmit={this.handleSubmit}> 
                     <div>
                         <input type='text' name='username' placeholder='Username' onChange={this.handleChange}/> 
@@ -34,6 +60,7 @@ export default class SignUp extends Component {
                     </div>
                     <button type='submit' value='Submit'>Submit</button> 
                 </form>
+                
             </div>
         )
     }

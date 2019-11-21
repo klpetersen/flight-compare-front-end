@@ -20,9 +20,6 @@ export default class SearchBar extends Component {
         this.props.findFlight(this.state.origin, this.state.destination, this.state.date)
     }
 
-    
-
-
     render() {
         return (
             <div className='search-bar-container'>
