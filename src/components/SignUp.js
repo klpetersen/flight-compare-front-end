@@ -47,12 +47,14 @@ export default class SignUp extends Component {
                     }).then(resp=>resp.json())
                     .then(data=> {
                     this.props.setCurrentUser(data)
+                    localStorage.user_id = data.id
                     this.props.history.push('/search')} )
                     alert('Profile created!')
                 } 
             } else if (this.state.login === true) { 
                 if (this.state.password === foundUser.password) { 
                     this.props.setCurrentUser(foundUser)
+                    localStorage.user_id = foundUser.id
                     this.props.history.push('/search')
                 } else { 
                     alert('Please retry!')
