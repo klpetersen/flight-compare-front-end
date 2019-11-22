@@ -22,7 +22,8 @@ export default class App extends React.Component {
 
   signOut = () => {
     this.setState({
-      currentUser: null
+      currentUser: null, 
+      user_id: null
     })
   }
 
@@ -32,7 +33,7 @@ export default class App extends React.Component {
       <div>
           <Switch> 
               <Route exact path='/' render={(routerProps) => <LoginSign currentUser={this.state.currentUser} setCurrentUser={this.setCurrentUser} {...routerProps} />}/> 
-              <Route exact path='/search' render={() =><Search user_id={this.state.user_id} />}/> 
+              <Route exact path='/search' render={(routerProps) =><Search user_id={this.state.user_id} signOut={this.signOut} {...routerProps}/>}/> 
           </Switch>
       </div>
     </Router>
