@@ -9,8 +9,17 @@ export default class Search extends Component {
         Carriers: null, 
         Currencies: null, 
         Places: null, 
-        Quotes: null
+        Quotes: null, 
+        savedSearches: null
       }
+
+    componentDidMount() { 
+      fetch('http://localhost:3000/searches')
+          .then(resp => resp.json())
+          .then(data => this.setState({ 
+              savedSearches: data
+          }))
+    } 
 
     findFlight = (origin, destination, date) => {
 
@@ -33,6 +42,12 @@ export default class Search extends Component {
             console.log(err)
           })
     }
+
+    addToSavedSearch = (data) => { 
+      this.setState({
+        savedSearches: [...this.state.savedSearches, data]
+      })
+    }
       
     render() {
     return (
@@ -44,8 +59,9 @@ export default class Search extends Component {
                 Places={this.state.Places}
                 Quotes={this.state.Quotes}
                 user_id={this.props.user_id}
+                addToSavedSearch={this.addToSavedSearch}
             /> 
-            <SavedSearches user_id={this.props.user_id}/> 
+            <SavedSearches user_id={this.props.user_id} savedSearches={this.state.savedSearches} /> 
           </div>
     )
     }

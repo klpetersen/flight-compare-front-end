@@ -9,7 +9,8 @@ export default function SearchList(props) {
            Currencies={props.Currencies} 
            Places={props.Places}
            Quotes={props.Quotes}
-           user_id={props.user_id} /> 
+           user_id={props.user_id} 
+           addToSavedSearch={props.addToSavedSearch}/> 
         </div>
     )
 }
