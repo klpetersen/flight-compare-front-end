@@ -1,41 +1,48 @@
 import React from 'react'
 
-export default function SavedItems(props) {
+export default class SavedItems extends React.Component {
 
-    const fetchSearches = () => { 
-        if (props.user_id !== null) { 
+    state = { 
+        savedSearches: null
+    }
+
+    componentDidMount() { 
+        if (this.props.user_id !== null) { 
             fetch('http://localhost:3000/searches')
                 .then(resp => resp.json())
-                .then(data => findUser(data))
+                .then(data => this.setState({ 
+                    savedSearches: data
+                }))
         }
     }
 
-    const findUser = (searches) => { 
-        let userData = searches.filter(search => search.user_id === props.user_id)
-        displayData(userData)
+    findUser = () => { 
+        if(this.state.savedSearches !== null) { 
+            let foundUserData = this.state.savedSearches.filter(search => search.user_id === this.props.user_id)
+            return this.displayData(foundUserData)
+        }
     }
 
-    const displayData = (userData) => { 
-        console.log(userData)
-        return userData.map(search => 
-            console.log(search)
-            // <p>
-            //     {search.baggage_fee}
-            //     {search.carrier}
-            //     {search.date}
-            //     {search.departCity}
-            //     {search.destination}
-            //     {search.direct}
-            //     {search.price}
-            // </p>
+    displayData = (userData) => { 
+        return userData.map((search, i) => 
+            <p key={i}>
+                {search.baggage_fee}
+                {search.carrier}
+                {search.date}
+                {search.departCity}
+                {search.destination}
+                {search.direct}
+                {search.price}
+            </p>
             )
     }
-
+    render() { 
     return (
         <div className='saved-items'>
-            {fetchSearches()}
+            {this.findUser()}
         </div>
     )
+    }
 }
 
 // baggage_fee: 0

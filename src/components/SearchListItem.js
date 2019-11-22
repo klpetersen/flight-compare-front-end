@@ -3,6 +3,7 @@ import React from 'react'
 export default function SearchListItem(props) {
    
     const mapQuotes = () => { 
+
         if(props.Quotes !== null && props.Quotes !== undefined) { 
             return props.Quotes.map((quote, i) => {  
                 let carrier = findCarrier(quote.OutboundLeg.CarrierIds[0])
@@ -57,7 +58,7 @@ export default function SearchListItem(props) {
         return foundCity.CityName
     }
                 
-    const handleClick = (carrier, direct, date, departCity, destination, price) => { 
+    const handleClick = (carrier, direct, date, departCity, destination, price) => {
         fetch('http://localhost:3000/searches', { 
             method: 'POST', 
             headers: {
