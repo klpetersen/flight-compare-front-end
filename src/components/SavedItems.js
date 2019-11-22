@@ -11,17 +11,29 @@ export default class SavedItems extends React.Component {
 
     displayData = (userData) => { 
         return userData.map((search, i) => 
-            <p key={i}>
-                {search.baggage_fee}
-                {search.carrier}
-                {search.date}
-                {search.departCity}
-                {search.destination}
-                {search.direct}
-                {search.price}
-            </p>
-            )
+        <div key={i} id={search.id}>
+            {search.baggage_fee}
+            {search.carrier}
+            {search.date}
+            {search.departCity}
+            {search.destination}
+            {search.direct}
+            {search.price}
+            <button onClick={(e) => this.handleDelete(e)}>Delete</button>
+        </div>
+        )
     }
+
+    handleDelete = (event) => { 
+        let elementId = event.target.parentElement.id 
+        elementId = parseInt(elementId)
+        let foundSearch = this.props.savedSearches.find(search => search.id === elementId) 
+        fetch(`http://localhost:3000/searches/${foundSearch.id}`, {
+            method: 'DELETE'
+        }).then(resp => resp.json()).then(data => this.props.removeFromSavedSearch(data))
+    }
+
+
     render() { 
     return (
         <div className='saved-items'>

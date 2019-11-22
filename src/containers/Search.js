@@ -48,6 +48,12 @@ export default class Search extends Component {
         savedSearches: [...this.state.savedSearches, data]
       })
     }
+
+    removeFromSavedSearch = (data) => { 
+      this.setState({ 
+        savedSearches: data
+      })
+    }
       
     render() {
     return (
@@ -61,7 +67,10 @@ export default class Search extends Component {
                 user_id={this.props.user_id}
                 addToSavedSearch={this.addToSavedSearch}
             /> 
-            <SavedSearches user_id={this.props.user_id} savedSearches={this.state.savedSearches} /> 
+            <SavedSearches 
+              user_id={this.props.user_id} 
+              savedSearches={this.state.savedSearches} 
+              removeFromSavedSearch={this.removeFromSavedSearch}/> 
           </div>
     )
     }

@@ -84,7 +84,7 @@ export default class SignUp extends Component {
                         <input type='text' name='username' placeholder='Username' onChange={this.handleChange}/> 
                     </div>
                     <div>
-                        <input type='text' name='password' placeholder='Password' onChange={this.handleChange} />
+                        <input type='password' name='password' placeholder='Password' onChange={this.handleChange} />
                     </div>
                     <button className='sign-up-btn' type='submit' value='Submit'>Submit</button> 
                     
