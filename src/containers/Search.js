@@ -52,7 +52,7 @@ export default class Search extends Component {
     render() {
     return (
           <div className='search-container'>
-            <SearchBar findFlight={this.findFlight} /> 
+            <SearchBar findFlight={this.findFlight} signOut={this.props.signOut} {...this.props} /> 
             <SearchList 
                 Carriers={this.state.Carriers} 
                 Currencies={this.state.Currencies} 

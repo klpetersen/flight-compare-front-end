@@ -24,7 +24,7 @@ export default class SignUp extends Component {
 
     handleClick = () => { 
         this.setState({ 
-            login: true
+            login: !this.state.login
         })
     }
         
@@ -68,7 +68,11 @@ export default class SignUp extends Component {
             <div className='sign-up-form' >
                 {this.state.login 
                 ? 
-                <h1>Login</h1> 
+                <div>
+                    <h1>Login</h1> 
+                    <button className='login-btn' onClick={() => this.handleClick()}>Create a Profile!</button>
+                </div>
+                
                 : 
                 <div>
                     <h1>Sign Up</h1>

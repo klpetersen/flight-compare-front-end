@@ -20,6 +20,11 @@ export default class SearchBar extends Component {
         this.props.findFlight(this.state.origin, this.state.destination, this.state.date)
     }
 
+    handleSignOut = () => { 
+        this.props.signOut()
+        this.props.history.push('/')
+    }
+
     render() {
         return (
             <div className='search-bar-container'>
@@ -33,6 +38,7 @@ export default class SearchBar extends Component {
                             <input name='date' type='text' placeholder='0000-00-00' onChange={this.handleChange}/> 
                         <button type='submit'>Submit</button>
                     </form>
+                    <button onClick={() => this.handleSignOut()}>SignOut</button>
                 </div>
             </div>
         )
