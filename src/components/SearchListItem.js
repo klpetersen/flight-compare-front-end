@@ -1,5 +1,6 @@
 import React from 'react'
 
+
 export default function SearchListItem(props) {
    
     const mapQuotes = () => { 
@@ -75,7 +76,7 @@ export default function SearchListItem(props) {
                 departCity, 
                 destination
             })
-        })    
+        }).then(resp => resp.json()).then(data => props.addToSavedSearch(data))    
     }
 
 
