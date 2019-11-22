@@ -22,6 +22,7 @@ export default class SearchBar extends Component {
 
     handleSignOut = () => { 
         this.props.signOut()
+        localStorage.removeItem('user_id')
         this.props.history.push('/')
     }
 

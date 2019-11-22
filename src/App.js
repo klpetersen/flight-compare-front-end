@@ -5,6 +5,7 @@ import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import LoginSign from './containers/LoginSign'
 
 
+
 export default class App extends React.Component {
 
   state = { 
@@ -12,6 +13,11 @@ export default class App extends React.Component {
     user_id: null
   }
 
+  componentDidMount() { 
+    if(localStorage.user_id){ 
+      this.fetchUsers()
+    }
+  }
 
   setCurrentUser = (user) => { 
     this.setState({ 
@@ -25,6 +31,19 @@ export default class App extends React.Component {
       currentUser: null, 
       user_id: null
     })
+  }
+
+  fetchUsers = () => { 
+    fetch('http://localhost:3000/users')
+      .then(resp => resp.json())
+      .then(data => this.findUser(data))
+  }
+
+  findUser = (users) => { 
+    let id = localStorage.user_id 
+    id = parseInt(id)
+    let foundUser = users.find(user => user.id === id)
+    this.setCurrentUser(foundUser)
   }
 
   render() { 
