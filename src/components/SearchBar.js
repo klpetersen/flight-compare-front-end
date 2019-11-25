@@ -51,7 +51,7 @@ export default class SearchBar extends Component {
                             <input name='date' type='text' placeholder='0000-00-00' onChange={this.handleChange}/> 
                         <button type='submit'>Submit</button>
                     </form>
-                    <button className='sign-out' onClick={() => this.handleSignOut()}>SignOut</button>
+                    <button name='sign-out' className='sign-out' onClick={() => this.handleSignOut()}><i class="fas fa-plane-departure fa-4x"></i></button>
                 </div>
             </div>
         )

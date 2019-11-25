@@ -2,43 +2,48 @@ import React from 'react'
 
 
 export default function SearchListItem(props) {
-   
-    const mapQuotes = () => { 
+    console.log(props.Quotes)
 
-        if(props.Quotes !== null && props.Quotes !== undefined) { 
-            return props.Quotes.map((quote, i) => {  
-                let carrier = findCarrier(quote.OutboundLeg.CarrierIds[0])
-                let direct = quote.Direct ? 'nonstop' : 'connections'; 
-                let date = formatDate(quote.OutboundLeg.DepartureDate)
-                let departCity = findCity(quote.OutboundLeg.OriginId)
-                let destination = findCity(quote.OutboundLeg.DestinationId)
-                let price = quote.MinPrice
+    const formatQuote = () => { 
+        if(props.Quotes !== null && props.Quotes[0] !== undefined) { 
+            let quote = props.Quotes[0]
+            let carrier = findCarrier(quote.OutboundLeg.CarrierIds[0])
+            let direct = quote.Direct ? 'nonstop' : 'connections'; 
+            let date = formatDate(quote.OutboundLeg.DepartureDate)
+            let departCity = findCity(quote.OutboundLeg.OriginId)
+            let destination = findCity(quote.OutboundLeg.DestinationId)
+            let price = quote.MinPrice
+    
+            return formatCard(carrier, direct, date, departCity, destination, price)
 
-                return (
-                    <div key={i} className='flight-detail-card'> 
-                        <h2>{carrier + ' '}</h2>
-                        <p className='direct-flight'>{direct}</p>
-                        <p className='departure-date'>{ date + ' '}</p>
-                        <p className='departure-city'>{ departCity + ' '}</p>
-                        <p className='destination'>{ destination + ' '}</p>
-                        <p className='price'>{price + ' '}</p>
-                        <button onClick={() => handleClick(carrier, direct, date, departCity, destination, price)}>Save</button>
-                    </div>
-                )
-            })
-        } else if (props.Quotes === undefined) { 
+        } else if (props.Quotes === undefined || (props.Quotes !== null && props.Quotes.length === 0)){
            return (
                 <div> 
-                    <h2>Sorry, no flights found!</h2>
+                    <h2 className='search-heading'>Sorry, no flights found!</h2>
                 </div>
                 )
-        } else if (props.Quotes === null) { 
+        } else { 
             return (
                 <div> 
-                    <h2>Please search flights...</h2>
+                    <h2 className='search-heading'>Please search flights...</h2>
                 </div>
             )
         }
+    }
+
+    const formatCard = (carrier, direct, date, departCity, destination, price) => { 
+        console.log(carrier, direct, date, departCity, destination, price)
+        return(
+        <div className='flight-detail-card'> 
+            <h2>{carrier}</h2>
+            <p className='direct-flight'>{direct}</p>
+            <p className='departure-date'>{date}</p>
+            <p className='departure-city'>{departCity}</p>
+            <p className='destination'>{destination}</p>
+            <p className='price'>{price}</p>
+            <button onClick={() => handleClick(carrier, direct, date, departCity, destination, price)}>Save</button>
+        </div>
+        )
     }
 
     const findCarrier = (id) => { 
@@ -82,7 +87,7 @@ export default function SearchListItem(props) {
 
     return (
         <div>
-            {mapQuotes()}
+            {formatQuote()}
         </div>
     )
 }

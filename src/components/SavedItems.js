@@ -11,7 +11,7 @@ export default class SavedItems extends React.Component {
 
     displayData = (userData) => { 
         return userData.map((search, i) => 
-        <div key={i} id={search.id}>
+        <div className='saved-items' key={i} id={search.id}>
             {search.baggage_fee}
             {search.carrier}
             {search.date}
@@ -36,7 +36,7 @@ export default class SavedItems extends React.Component {
 
     render() { 
     return (
-        <div className='saved-items'>
+        <div >
             {this.findUser()}
         </div>
     )

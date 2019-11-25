@@ -1,6 +1,7 @@
 import React from 'react'
 import SearchListItem from './SearchListItem'
 
+
 export default function SearchList(props) {
     return (
         <div className='search-list-container'>
