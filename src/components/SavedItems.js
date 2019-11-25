@@ -12,14 +12,15 @@ export default class SavedItems extends React.Component {
     displayData = (userData) => { 
         return userData.map((search, i) => 
         <div className='saved-items' key={i} id={search.id}>
-            {search.baggage_fee}
-            {search.carrier}
-            {search.date}
-            {search.departCity}
-            {search.destination}
-            {search.direct}
-            {search.price}
-            <button onClick={(e) => this.handleDelete(e)}>Delete</button>
+            {/* {search.baggage_fee} */}
+           <h4>{search.carrier}</h4> 
+            <div className='saved-date'>{search.date}</div>
+            <div className='saved-origin'>{search.departCity}</div>
+            <div className='arrow-right'><i class="fas fa-arrow-right"></i></div>
+            <div className='saved-destination'>{search.destination}</div>
+            <div className='saved-direct'>{search.direct}</div>
+            <div className='saved-price'>${search.price}</div>
+            <button onClick={(e) => this.handleDelete(e)}><i className="fas fa-trash fa-2x"></i></button>
         </div>
         )
     }
