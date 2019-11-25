@@ -1,4 +1,9 @@
 import React, { Component } from 'react'
+import cloud1 from '../cloud1.png'
+import cloud2 from '../cloud2.png'
+import cloud3 from '../cloud3.png'
+import cloud4 from '../cloud4.png'
+import plane1 from '../plane1.png'
 
 export default class SearchBar extends Component {
 
@@ -29,6 +34,13 @@ export default class SearchBar extends Component {
     render() {
         return (
             <div className='search-bar-container'>
+                <img className='cloud-1' src={cloud1} alt='cloud'/> 
+                <img className='cloud-2' src={cloud2} alt='cloud'/> 
+                <img className='cloud-3' src={cloud3} alt='cloud'/> 
+                <img className='cloud-4' src={cloud4} alt='cloud'/> 
+                <img className='cloud-5' src={cloud1} alt='cloud'/> 
+                <img className='cloud-6' src={cloud4} alt='cloud'/> 
+                <img className='plane-1' src={plane1} alt='cloud'/> 
                 <div> 
                     <form onSubmit={this.handleSubmit}>
                         <label>FROM</label> 
@@ -39,7 +51,7 @@ export default class SearchBar extends Component {
                             <input name='date' type='text' placeholder='0000-00-00' onChange={this.handleChange}/> 
                         <button type='submit'>Submit</button>
                     </form>
-                    <button onClick={() => this.handleSignOut()}>SignOut</button>
+                    <button className='sign-out' onClick={() => this.handleSignOut()}>SignOut</button>
                 </div>
             </div>
         )
