@@ -11,21 +11,22 @@ export default class SavedItems extends React.Component {
 
     displayData = (userData) => { 
         return userData.map((search, i) => 
-        <div key={i} id={search.id}>
-            {search.baggage_fee}
-            {search.carrier}
-            {search.date}
-            {search.departCity}
-            {search.destination}
-            {search.direct}
-            {search.price}
-            <button onClick={(e) => this.handleDelete(e)}>Delete</button>
+        <div className='saved-items' key={i} id={search.id}>
+            {/* {search.baggage_fee} */}
+           <h4>{search.carrier}</h4> 
+            <div className='saved-date'>{search.date}</div>
+            <div className='saved-origin'>{search.departCity}</div>
+            <div className='arrow-right'><i class="fas fa-arrow-right"></i></div>
+            <div className='saved-destination'>{search.destination}</div>
+            <div className='saved-direct'>{search.direct}</div>
+            <div className='saved-price'>${search.price}</div>
+            <button onClick={(e) => this.handleDelete(e)}><i className="fas fa-trash fa-2x"></i></button>
         </div>
         )
     }
 
     handleDelete = (event) => { 
-        let elementId = event.target.parentElement.id 
+        let elementId = event.target.parentElement.parentElement.id
         elementId = parseInt(elementId)
         let foundSearch = this.props.savedSearches.find(search => search.id === elementId) 
         fetch(`http://localhost:3000/searches/${foundSearch.id}`, {
@@ -36,7 +37,7 @@ export default class SavedItems extends React.Component {
 
     render() { 
     return (
-        <div className='saved-items'>
+        <div >
             {this.findUser()}
         </div>
     )

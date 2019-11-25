@@ -46,25 +46,34 @@
 }
 
 .search-list-container { 
-  background-color: #CB6318;
+  background-color: rgb(0, 41, 102, .97);
+  /* border-style: solid; 
+  border-color: black;  */
   height: 75vh;
   width: 23vw; 
   position: fixed; 
-  top: 20%; 
+  top: 15%; 
   left: 10%; 
   overflow: auto; 
+  text-align: center; 
+  border-radius: 10px; 
+  color: white; 
 }
 
 .flight-detail-card {  
-  width: 100%; 
-  height: 100px;
-  /* float: left; 
-  display: flex;  */
+  width: 100%;
+  height: 100%;
+  margin-top: 50px;
+}
+
+.flight-detail-card p{
+  margin-top: 30px; 
+
 }
 
 .price { 
   font-size: 30px; 
-  float: right; 
+  
 }
 
 /* Search Bar Container */
@@ -82,9 +91,9 @@
   left: 35%; 
 }
 .sign-out { 
-float: right; 
-position: relative; 
-
+  position: fixed; 
+  left: 80%;
+  top: 3% 
 }
 
 .cloud-1 { 
@@ -142,17 +151,67 @@ position: relative;
 .saved-search-container { 
   /* background-color: #7CAA2D; */
   width: 55vw; 
-  height: 75vh; 
   position: fixed; 
-  top: 20%; 
+  top: 15%; 
   left: 35%; 
   z-index: 1;
+  background-color: rgb(255, 255, 255, .95);
+  /* display: flex; 
+  flex-direction: column;  */
 }
 
 .saved-items { 
   width: 100%; 
-  height: 100px;
-  /* float: left; 
+  height: 100px; 
+  font-size: 30px; 
   display: flex; 
-  z-index: 2; */
+  flex-direction: row;
+  /* justify-content: space-between; */
+  
+}
+
+.saved-items h4 { 
+  margin-left: 10px; 
+  width: 20%;
+}
+
+.saved-date { 
+  font-size: 16px; 
+  margin-top: 50px; 
+  width: 10%
+}
+
+.saved-origin { 
+  margin-top: 38px; 
+  width: 15%;
+  text-align: center; 
+}
+
+.saved-destination { 
+  margin-top: 36px; 
+  width: 15%; 
+  text-align: center; 
+}
+
+.saved-direct { 
+  margin-top: 35px; 
+  width: 18%;
+}
+
+.saved-price { 
+  margin-top: 35px; 
+  width: 11%; 
+}
+
+.saved-items button { 
+  border: none; 
+  background-color: transparent; 
+  outline: none; 
+  margin-right: 10px; 
+}
+
+.arrow-right { 
+  margin-top: 38px; 
+  width: 4%;
+  text-align: center; 
 }
