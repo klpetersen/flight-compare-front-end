@@ -26,7 +26,7 @@ export default class SavedItems extends React.Component {
     }
 
     handleDelete = (event) => { 
-        let elementId = event.target.parentElement.id 
+        let elementId = event.target.parentElement.parentElement.id
         elementId = parseInt(elementId)
         let foundSearch = this.props.savedSearches.find(search => search.id === elementId) 
         fetch(`http://localhost:3000/searches/${foundSearch.id}`, {
