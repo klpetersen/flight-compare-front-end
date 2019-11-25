@@ -166,37 +166,41 @@
   font-size: 30px; 
   display: flex; 
   flex-direction: row;
-  justify-content: space-between;
+  /* justify-content: space-between; */
   
 }
 
 .saved-items h4 { 
   margin-left: 10px; 
+  width: 20%;
 }
 
 .saved-date { 
-  font-size: 20px; 
-  margin-top: 48px; 
+  font-size: 16px; 
+  margin-top: 50px; 
+  width: 10%
 }
 
 .saved-origin { 
- 
   margin-top: 38px; 
+  width: 15%;
+  text-align: center; 
 }
 
 .saved-destination { 
   margin-top: 36px; 
-
+  width: 15%; 
+  text-align: center; 
 }
 
 .saved-direct { 
   margin-top: 35px; 
-
+  width: 18%;
 }
 
 .saved-price { 
   margin-top: 35px; 
-  
+  width: 11%; 
 }
 
 .saved-items button { 
@@ -208,4 +212,6 @@
 
 .arrow-right { 
   margin-top: 38px; 
+  width: 4%;
+  text-align: center; 
 }

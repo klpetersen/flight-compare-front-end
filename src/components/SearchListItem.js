@@ -8,7 +8,7 @@ export default function SearchListItem(props) {
         if(props.Quotes !== null && props.Quotes[0] !== undefined) { 
             let quote = props.Quotes[0]
             let carrier = findCarrier(quote.OutboundLeg.CarrierIds[0])
-            let direct = quote.Direct ? 'nonstop' : 'connections'; 
+            let direct = quote.Direct ? 'Nonstop' : 'Connection'; 
             let date = formatDate(quote.OutboundLeg.DepartureDate)
             let departCity = findCity(quote.OutboundLeg.OriginId)
             let destination = findCity(quote.OutboundLeg.DestinationId)
