@@ -3,6 +3,9 @@
 }
 
 
+
+
+
 /* SIGN UP */
 .login-signup-window { 
   background-color: cadetblue; 
@@ -41,6 +44,12 @@
 }
 
 
+
+
+
+
+
+
 /* SEARCH */
 .search-container { 
   background-color: rgba(133, 185, 237, .8);
@@ -71,14 +80,47 @@
 }
 
 .flight-detail-card p{
-  margin-top: 30px; 
+  margin-top: 60px; 
+}
 
+.flight-detail-card h2 { 
+  font-size: 35px; 
+}
+
+.direct-flight { 
+  font-size: 25px; 
+}
+
+.departure-date { 
+  font-size: 20px; 
+}
+
+.departure-city { 
+  font-size: 35px; 
+}
+
+.result-arrow { 
+  margin-right: 20px; 
+  margin-left: 20px; 
 }
 
 .price { 
-  font-size: 30px; 
-  
+  font-size: 43px;
 }
+
+.result-submit { 
+  width: 80px; 
+  height: 30px; 
+  font-size: 20px; 
+  border-radius: 15px; 
+  margin-top: 25px; 
+  cursor: pointer;
+}
+
+
+
+
+
 
 /* Search Bar Container */
 
@@ -183,11 +225,19 @@
 }
 
 
+
+
+
+
+
+
 /* Saved Search Container */
 
 .saved-search-container { 
   /* background-color: #7CAA2D; */
-  width: 60vw; 
+  width: 63vw; 
+  max-height: 75vh;
+  overflow: scroll;
   position: fixed; 
   top: 15%; 
   left: 34%; 
@@ -215,9 +265,9 @@
 }
 
 .saved-date { 
-  font-size: 16px; 
-  margin-top: 50px; 
-  width: 10%
+  font-size: 17px; 
+  margin-top: 46px; 
+  width: 12%
 }
 
 .saved-origin { 
@@ -232,7 +282,7 @@
 
 .saved-direct { 
   margin-top: 35px; 
-  width: 18%;
+  width: 17%;
 }
 
 .saved-price { 
