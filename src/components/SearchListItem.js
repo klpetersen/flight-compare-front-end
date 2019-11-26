@@ -2,18 +2,17 @@ import React from 'react'
 
 
 export default function SearchListItem(props) {
-    console.log(props.Quotes)
 
     const formatQuote = () => { 
-        if(props.Quotes !== null && props.Quotes[0] !== undefined) { 
+        if(props.Quotes && props.Quotes[0] !== undefined) { 
             let quote = props.Quotes[0]
+            console.log(props)
             let carrier = findCarrier(quote.OutboundLeg.CarrierIds[0])
             let direct = quote.Direct ? 'Nonstop' : 'Connection'; 
             let date = formatDate(quote.OutboundLeg.DepartureDate)
             let departCity = findCity(quote.OutboundLeg.OriginId)
             let destination = findCity(quote.OutboundLeg.DestinationId)
             let price = quote.MinPrice
-    
             return formatCard(carrier, direct, date, departCity, destination, price)
 
         } else if (props.Quotes === undefined || (props.Quotes !== null && props.Quotes.length === 0)){
@@ -32,7 +31,6 @@ export default function SearchListItem(props) {
     }
 
     const formatCard = (carrier, direct, date, departCity, destination, price) => { 
-        console.log(carrier, direct, date, departCity, destination, price)
         return(
         <div className='flight-detail-card'> 
             <h2>{carrier}</h2>
@@ -61,7 +59,8 @@ export default function SearchListItem(props) {
 
     const findCity = (id) => { 
         let foundCity = props.Places.find(place => place.PlaceId === id)
-        return foundCity.CityName
+        console.log(foundCity)
+        return foundCity.IataCode
     }
                 
     const handleClick = (carrier, direct, date, departCity, destination, price) => {
