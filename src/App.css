@@ -8,18 +8,18 @@
 
 /* SIGN UP */
 .login-signup-window { 
-  background-color: cadetblue; 
+  background-color: rgba(133, 185, 237, .7);
   width: 100vw; 
   height: 100vh; 
 }
 
 .form-container { 
-  background-color: brown; 
-  width: 50vw; 
-  height: 50vh; 
+  background-color: rgb(255, 255, 255, .8); 
+  width: 30vw; 
+  height: 45vh; 
   position: fixed; 
-  top: 25%; 
-  left: 25%; 
+  top: 23%; 
+  left: 35%; 
   border-radius: 15px; 
 }
 
@@ -43,7 +43,20 @@
   font-size: 15px; 
 }
 
+.login-background { 
+  position: fixed; 
+  width: 100vw; 
+  height: 65vh; 
+  margin-top: 35vh; 
+}
 
+.plane-login { 
+  position: fixed;
+  height: 150px;
+  width: 200px;   
+  left: 60%; 
+  top: 10%; 
+}
 
 
 
@@ -52,7 +65,7 @@
 
 /* SEARCH */
 .search-container { 
-  background-color: rgba(133, 185, 237, .8);
+  background-color: rgba(133, 185, 237, .7);
   width: 100vw; 
   height: 100vh;
   position: relative; 
@@ -66,8 +79,7 @@
   width: 25vw; 
   position: fixed; 
   top: 15%; 
-  left: 7%; 
-  overflow: auto; 
+  left: 5%; 
   text-align: center; 
   border-radius: 10px; 
   color: white; 
@@ -133,7 +145,7 @@
 .search-bar-container form{  
   display: flex;  
   margin-top: 25px; 
-  margin-left: 43%
+  margin-left: 40%
 }
 
 .search-label { 
@@ -227,20 +239,15 @@
 
 
 
-
-
-
-
 /* Saved Search Container */
 
 .saved-search-container { 
   /* background-color: #7CAA2D; */
   width: 63vw; 
   max-height: 75vh;
-  overflow: scroll;
   position: fixed; 
   top: 15%; 
-  left: 34%; 
+  left: 32.5%; 
   z-index: 1;
   background-color: rgb(255, 255, 255, .95);
   border-radius: 10px; 
