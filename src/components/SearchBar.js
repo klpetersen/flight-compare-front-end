@@ -43,13 +43,13 @@ export default class SearchBar extends Component {
                 <img className='plane-1' src={plane1} alt='cloud'/> 
                 <div> 
                     <form onSubmit={this.handleSubmit}>
-                        <label>FROM</label> 
+                        <div className='search-label'>FROM:</div> 
                             <input name='origin' className ='search-origin' type='text' placeholder='Airport Code' onChange={this.handleChange}/>
-                        <label>TO</label>
+                        <div className='search-label'>TO:</div>
                             <input name='destination' className='search-destination' type='text' placeholder='Airport Code' onChange={this.handleChange}/> 
-                        <label>WHEN</label>
+                        <div className='search-label'>WHEN:</div>
                             <input name='date' className='search-date' type='text' placeholder='0000-00-00' onChange={this.handleChange}/> 
-                        <button type='submit'>Submit</button>
+                        <button className='submit-search-btn' type='submit'>Submit</button>
                     </form>
                     <button name='sign-out' className='sign-out' onClick={() => this.handleSignOut()}><i className="fas fa-plane-departure fa-4x"></i></button>
                 </div>

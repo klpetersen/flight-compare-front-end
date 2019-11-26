@@ -3,6 +3,9 @@
 }
 
 
+
+
+
 /* SIGN UP */
 .login-signup-window { 
   background-color: cadetblue; 
@@ -41,6 +44,12 @@
 }
 
 
+
+
+
+
+
+
 /* SEARCH */
 .search-container { 
   background-color: rgba(133, 185, 237, .8);
@@ -71,14 +80,47 @@
 }
 
 .flight-detail-card p{
-  margin-top: 30px; 
+  margin-top: 60px; 
+}
 
+.flight-detail-card h2 { 
+  font-size: 35px; 
+}
+
+.direct-flight { 
+  font-size: 25px; 
+}
+
+.departure-date { 
+  font-size: 20px; 
+}
+
+.departure-city { 
+  font-size: 35px; 
+}
+
+.result-arrow { 
+  margin-right: 20px; 
+  margin-left: 20px; 
 }
 
 .price { 
-  font-size: 30px; 
-  
+  font-size: 43px;
 }
+
+.result-submit { 
+  width: 80px; 
+  height: 30px; 
+  font-size: 20px; 
+  border-radius: 15px; 
+  margin-top: 25px; 
+  cursor: pointer;
+}
+
+
+
+
+
 
 /* Search Bar Container */
 
@@ -86,26 +128,40 @@
   position: fixed; 
   width: 100vw; 
   height: 15vh; 
-  text-align: center;
 }
 
-.search-bar-container form{ 
-  position: fixed;
-  margin-top: 30px; 
-  left: 35%; 
+.search-bar-container form{  
+  display: flex;  
+  margin-top: 25px; 
+  margin-left: 43%
 }
 
-.search-origin { 
-  
+.search-label { 
+  font-size: 30px; 
+  margin-top: 5px;
+  margin-left: 20px; 
+  margin-right: 12px;  
 }
 
-.search-destination { 
-
+.search-bar-container input { 
+  width: 100px;
+  height: 30px;  
+  font-size: 18px; 
+  border-radius: 5px; 
 }
 
-.search-date { 
-
+.submit-search-btn { 
+  margin-left: 23px; 
+  border-radius: 15px; 
+  font-size: 15px; 
+  background-color: rgb(0, 41, 102); 
+  color: white; 
+  font-weight: bold; 
+  height: 30px;
+  margin-top: 3px;  
+  cursor: pointer;
 }
+
 
 .sign-out { 
   position: fixed; 
@@ -115,6 +171,7 @@
   background-color: transparent; 
   outline: none; 
   color: rgb(0, 41, 102); 
+  cursor: pointer;
 }
 
 .cloud-1 { 
@@ -168,11 +225,19 @@
 }
 
 
+
+
+
+
+
+
 /* Saved Search Container */
 
 .saved-search-container { 
   /* background-color: #7CAA2D; */
-  width: 60vw; 
+  width: 63vw; 
+  max-height: 75vh;
+  overflow: scroll;
   position: fixed; 
   top: 15%; 
   left: 34%; 
@@ -200,9 +265,9 @@
 }
 
 .saved-date { 
-  font-size: 16px; 
-  margin-top: 50px; 
-  width: 10%
+  font-size: 17px; 
+  margin-top: 46px; 
+  width: 12%
 }
 
 .saved-origin { 
@@ -217,7 +282,7 @@
 
 .saved-direct { 
   margin-top: 35px; 
-  width: 18%;
+  width: 17%;
 }
 
 .saved-price { 
@@ -235,4 +300,8 @@
 .arrow-right { 
   margin-top: 38px; 
   width: 7%;
+}
+
+.trash-btn { 
+  cursor: pointer;
 }

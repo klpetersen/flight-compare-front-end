@@ -36,10 +36,9 @@ export default function SearchListItem(props) {
             <h2>{carrier}</h2>
             <p className='direct-flight'>{direct}</p>
             <p className='departure-date'>{date}</p>
-            <p className='departure-city'>{departCity}</p>
-            <p className='destination'>{destination}</p>
-            <p className='price'>{price}</p>
-            <button onClick={() => handleClick(carrier, direct, date, departCity, destination, price)}>Save</button>
+            <p className='departure-city'>{departCity}<i className="fas fa-arrow-right fa-1x result-arrow"></i>{destination}</p>
+            <p className='price'>${price}</p>
+            <button className='result-submit' onClick={() => handleClick(carrier, direct, date, departCity, destination, price)}>Save</button>
         </div>
         )
     }

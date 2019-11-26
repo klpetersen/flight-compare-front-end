@@ -20,7 +20,7 @@ export default class SavedItems extends React.Component {
             <div className='saved-destination'>{search.destination}</div>
             <div className='saved-direct'>{search.direct}</div>
             <div className='saved-price'>${search.price}</div>
-            <button onClick={(e) => this.handleDelete(e)}><i className="fas fa-trash fa-2x"></i></button>
+            <button onClick={(e) => this.handleDelete(e)}><i className="fas fa-trash fa-2x trash-btn"></i></button>
         </div>
         )
     }
