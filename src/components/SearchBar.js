@@ -44,14 +44,14 @@ export default class SearchBar extends Component {
                 <div> 
                     <form onSubmit={this.handleSubmit}>
                         <label>FROM</label> 
-                            <input name ='origin' type='text' placeholder='Airport Code' onChange={this.handleChange}/>
+                            <input name='origin' className ='search-origin' type='text' placeholder='Airport Code' onChange={this.handleChange}/>
                         <label>TO</label>
-                            <input name='destination' type='text' placeholder='Airport Code' onChange={this.handleChange}/> 
+                            <input name='destination' className='search-destination' type='text' placeholder='Airport Code' onChange={this.handleChange}/> 
                         <label>WHEN</label>
-                            <input name='date' type='text' placeholder='0000-00-00' onChange={this.handleChange}/> 
+                            <input name='date' className='search-date' type='text' placeholder='0000-00-00' onChange={this.handleChange}/> 
                         <button type='submit'>Submit</button>
                     </form>
-                    <button name='sign-out' className='sign-out' onClick={() => this.handleSignOut()}><i class="fas fa-plane-departure fa-4x"></i></button>
+                    <button name='sign-out' className='sign-out' onClick={() => this.handleSignOut()}><i className="fas fa-plane-departure fa-4x"></i></button>
                 </div>
             </div>
         )

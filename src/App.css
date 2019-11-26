@@ -1,3 +1,7 @@
+* { 
+  font-family: 'Tajawal', sans-serif;
+}
+
 
 /* SIGN UP */
 .login-signup-window { 
@@ -50,10 +54,10 @@
   /* border-style: solid; 
   border-color: black;  */
   height: 75vh;
-  width: 23vw; 
+  width: 25vw; 
   position: fixed; 
   top: 15%; 
-  left: 10%; 
+  left: 7%; 
   overflow: auto; 
   text-align: center; 
   border-radius: 10px; 
@@ -90,10 +94,27 @@
   margin-top: 30px; 
   left: 35%; 
 }
+
+.search-origin { 
+  
+}
+
+.search-destination { 
+
+}
+
+.search-date { 
+
+}
+
 .sign-out { 
   position: fixed; 
-  left: 80%;
-  top: 3% 
+  left: 93%;
+  top: 2%;
+  border: none; 
+  background-color: transparent; 
+  outline: none; 
+  color: rgb(0, 41, 102); 
 }
 
 .cloud-1 { 
@@ -146,16 +167,18 @@
   top: 35%;  
 }
 
+
 /* Saved Search Container */
 
 .saved-search-container { 
   /* background-color: #7CAA2D; */
-  width: 55vw; 
+  width: 60vw; 
   position: fixed; 
   top: 15%; 
-  left: 35%; 
+  left: 34%; 
   z-index: 1;
   background-color: rgb(255, 255, 255, .95);
+  border-radius: 10px; 
   /* display: flex; 
   flex-direction: column;  */
 }
@@ -166,13 +189,14 @@
   font-size: 30px; 
   display: flex; 
   flex-direction: row;
+  margin-bottom: 20px; 
   /* justify-content: space-between; */
   
 }
 
 .saved-items h4 { 
-  margin-left: 10px; 
-  width: 20%;
+  margin-left: 17px; 
+  width: 24%;
 }
 
 .saved-date { 
@@ -183,14 +207,12 @@
 
 .saved-origin { 
   margin-top: 38px; 
-  width: 15%;
-  text-align: center; 
+  width: 11%;
 }
 
 .saved-destination { 
   margin-top: 36px; 
-  width: 15%; 
-  text-align: center; 
+  width: 11%; 
 }
 
 .saved-direct { 
@@ -212,6 +234,5 @@
 
 .arrow-right { 
   margin-top: 38px; 
-  width: 4%;
-  text-align: center; 
+  width: 7%;
 }
