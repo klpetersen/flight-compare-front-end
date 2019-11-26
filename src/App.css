@@ -86,26 +86,40 @@
   position: fixed; 
   width: 100vw; 
   height: 15vh; 
-  text-align: center;
 }
 
-.search-bar-container form{ 
-  position: fixed;
-  margin-top: 30px; 
-  left: 35%; 
+.search-bar-container form{  
+  display: flex;  
+  margin-top: 25px; 
+  margin-left: 43%
 }
 
-.search-origin { 
-  
+.search-label { 
+  font-size: 30px; 
+  margin-top: 5px;
+  margin-left: 20px; 
+  margin-right: 12px;  
 }
 
-.search-destination { 
-
+.search-bar-container input { 
+  width: 100px;
+  height: 30px;  
+  font-size: 18px; 
+  border-radius: 5px; 
 }
 
-.search-date { 
-
+.submit-search-btn { 
+  margin-left: 23px; 
+  border-radius: 15px; 
+  font-size: 15px; 
+  background-color: rgb(0, 41, 102); 
+  color: white; 
+  font-weight: bold; 
+  height: 30px;
+  margin-top: 3px;  
+  cursor: pointer;
 }
+
 
 .sign-out { 
   position: fixed; 
@@ -115,6 +129,7 @@
   background-color: transparent; 
   outline: none; 
   color: rgb(0, 41, 102); 
+  cursor: pointer;
 }
 
 .cloud-1 { 
@@ -235,4 +250,8 @@
 .arrow-right { 
   margin-top: 38px; 
   width: 7%;
+}
+
+.trash-btn { 
+  cursor: pointer;
 }
