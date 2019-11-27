@@ -15,11 +15,11 @@
 
 .form-container { 
   background-color: rgb(255, 255, 255, .8); 
-  width: 30vw; 
+  width: 25vw; 
   height: 45vh; 
   position: fixed; 
   top: 23%; 
-  left: 35%; 
+  left: 37.5%; 
   border-radius: 15px; 
 }
 
@@ -30,17 +30,28 @@
 
 .sign-up-form input { 
   margin: 20px; 
-  height: 40px;
-  width: 300px;  
-  font-size: 50px; 
-  padding: 10px; 
+  height: 15px;
+  width: 220px;  
+  font-size: 20px; 
+  padding: 10px;
+  padding-top: 20px;  
+  font-weight: 100; 
+  margin-bottom: 3px;   
 }
 
 .sign-up-btn { 
   height: 40px; 
   width: 80px; 
   border-radius: 12px; 
-  font-size: 15px; 
+  font-size: 17px; 
+  font-weight: bold; 
+  padding-top: 6px; 
+  margin-top: 30px; 
+  cursor: pointer;
+}
+
+.sign-up-btn:hover { 
+  background-color: seagreen; 
 }
 
 .login-background { 
@@ -57,6 +68,25 @@
   left: 60%; 
   top: 10%; 
 }
+
+.login-btn { 
+  margin: 10px;
+  font-size: 20px; 
+  text-decoration: underline;
+  border: none; 
+  background-color: transparent; 
+  outline: none;   
+  cursor: pointer;
+  color: darkblue; 
+}
+
+.login-btn:hover {
+  color: seagreen; 
+ }
+
+ .login-btn:active {
+  color: gray;
+ }
 
 
 
@@ -127,6 +157,12 @@
   border-radius: 15px; 
   margin-top: 25px; 
   cursor: pointer;
+  padding-top: 5px;
+}
+
+.result-submit:hover { 
+  background-color: gray;
+  color: white;  
 }
 
 
@@ -144,13 +180,13 @@
 
 .search-bar-container form{  
   display: flex;  
-  margin-top: 25px; 
+  margin-top: 2.5%; 
   margin-left: 40%
 }
 
 .search-label { 
   font-size: 30px; 
-  margin-top: 5px;
+  margin-top: 9px;
   margin-left: 20px; 
   margin-right: 12px;  
 }
@@ -160,30 +196,44 @@
   height: 30px;  
   font-size: 18px; 
   border-radius: 5px; 
+  padding: 6px 7px 0px 7px; 
 }
 
 .submit-search-btn { 
   margin-left: 23px; 
   border-radius: 15px; 
-  font-size: 15px; 
+  font-size: 20px; 
   background-color: rgb(0, 41, 102); 
   color: white; 
   font-weight: bold; 
   height: 30px;
   margin-top: 3px;  
   cursor: pointer;
+  padding: 7px 20px 25px 20px;  
 }
 
+.submit-search-btn:hover { 
+  background-color: gray
+}
 
 .sign-out { 
   position: fixed; 
   left: 93%;
-  top: 2%;
+  top: 3%;
   border: none; 
   background-color: transparent; 
   outline: none; 
   color: rgb(0, 41, 102); 
   cursor: pointer;
+}
+
+.sign-out:hover { 
+  color: gray; 
+}
+
+.logout-word { 
+  margin-top: 2px; 
+  font-size: 15px; 
 }
 
 .cloud-1 { 
@@ -311,4 +361,8 @@
 
 .trash-btn { 
   cursor: pointer;
+}
+
+.trash-btn:hover { 
+  color: gray; 
 }

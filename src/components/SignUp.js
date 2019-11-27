@@ -29,6 +29,7 @@ export default class SignUp extends Component {
     }
         
     findUser = (users) => { 
+        if (this.state.user !== null && this.state.password !== null) {
         let foundUser = users.find(user => user.username === this.state.username) 
             if(this.state.login === false) {
                 if (foundUser) {
@@ -57,9 +58,12 @@ export default class SignUp extends Component {
                     localStorage.user_id = foundUser.id
                     this.props.history.push('/search')
                 } else { 
-                    alert('Please retry!')
+                    alert('Please try again')
                 }
             }
+        } else { 
+            alert('Please try again')
+        }
     }
 
 
