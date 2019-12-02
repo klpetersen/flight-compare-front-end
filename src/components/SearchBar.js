@@ -1,14 +1,26 @@
-import React, {Component} from 'react'
-import Clouds from './Clouds'
+import React, {Component} from 'react';
+import Clouds from './Clouds';
+import Date from './Calendar'
 
 export default class SearchBar extends Component {
     
-
     state = { 
         origin: null, 
         destination: null, 
-        date: null 
+        date: null
     }
+    
+   handleDate = (date) => { 
+        this.setState({ 
+            date
+        })
+   }
+   
+   reformatDate = (date) => { 
+    let newDate = date.toISOString() 
+    newDate = newDate.slice(0, 10)
+    return newDate
+   }
 
     handleChange = (event) => { 
         let target = event.target; 
@@ -19,7 +31,8 @@ export default class SearchBar extends Component {
 
     handleSubmit = (event) => { 
         event.preventDefault(); 
-        this.props.findFlight(this.state.origin, this.state.destination, this.state.date)
+        let newDate = this.reformatDate(this.state.date)
+        this.props.findFlight(this.state.origin, this.state.destination, newDate)
     }
 
     handleSignOut = () => { 
@@ -39,7 +52,7 @@ export default class SearchBar extends Component {
                         <div className='search-label'>TO:</div>
                             <input name='destination' className='search-destination' type='text' placeholder='Airport Code' onChange={this.handleChange}/> 
                         <div className='search-label'>WHEN:</div>
-                            <input name='date' className='search-date' type='text' placeholder='YYYY-MM-DD' onChange={this.handleChange}/> 
+                            <Date handleChange={this.handleDate} date={this.state.date}/>
                         <button className='submit-search-btn' type='submit'>Submit</button>
                     </form>
                     <button name='sign-out' className='sign-out' onClick={() => this.handleSignOut()}><i className="fas fa-plane-departure fa-4x"></i><div className='logout-word'>Sign Out</div></button>
@@ -48,3 +61,4 @@ export default class SearchBar extends Component {
         )
     }
 }
+
