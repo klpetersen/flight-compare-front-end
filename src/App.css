@@ -283,7 +283,7 @@
   width: 350px;
   left: -30%;
   top: 35%;
-  z-index: -1
+  z-index: -1;
 }
 
 .cloud-7 { 
@@ -291,7 +291,8 @@
   width: 500px; 
   height: 250px; 
   left: 0%;
-  top: 60% 
+  top: 60%;
+  z-index: -1; 
 }
 
 .cloud-8 { 
@@ -299,6 +300,7 @@
   width: 400px;
   height: 300px; 
   left: 15%; 
+  z-index: -1;
 }
 
 .cloud-9 { 
@@ -306,13 +308,15 @@
   width: 350px;
   left: 45%;
   top: 73%;
+  z-index: -1;
 }
 
 .cloud-10{ 
   position: fixed; 
   width: 350px;
   left: 80%;
-  top: 50% 
+  top: 50%;
+  z-index: -1; 
 }
 
 .cloud-11 { 
@@ -320,13 +324,15 @@
   left: 50%; 
   height: 220px; 
   top: 60px; 
+  z-index: -1;
 }
 
 .cloud-12 { 
   position: fixed; 
   width: 350px;
   left: 25%;
-  top: 35% 
+  top: 35%;
+  z-index: -1; 
 }
 
 .plane-1 { 
