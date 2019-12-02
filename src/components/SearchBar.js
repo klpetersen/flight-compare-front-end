@@ -1,5 +1,4 @@
 import React, {Component} from 'react'
-import plane1 from '../plane1.png'
 import Clouds from './Clouds'
 
 export default class SearchBar extends Component {
@@ -33,7 +32,6 @@ export default class SearchBar extends Component {
         return (
             <div className='search-bar-container'>
                 <Clouds /> 
-                <img className='plane-1' src={plane1} alt='plane'/> 
                 <div> 
                     <form onSubmit={this.handleSubmit}>
                         <div className='search-label'>FROM:</div> 
@@ -41,7 +39,7 @@ export default class SearchBar extends Component {
                         <div className='search-label'>TO:</div>
                             <input name='destination' className='search-destination' type='text' placeholder='Airport Code' onChange={this.handleChange}/> 
                         <div className='search-label'>WHEN:</div>
-                            <input name='date' className='search-date' type='text' placeholder='0000-00-00' onChange={this.handleChange}/> 
+                            <input name='date' className='search-date' type='text' placeholder='YYYY-MM-DD' onChange={this.handleChange}/> 
                         <button className='submit-search-btn' type='submit'>Submit</button>
                     </form>
                     <button name='sign-out' className='sign-out' onClick={() => this.handleSignOut()}><i className="fas fa-plane-departure fa-4x"></i><div className='logout-word'>Sign Out</div></button>
