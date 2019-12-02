@@ -4,7 +4,7 @@ import "react-datepicker/dist/react-datepicker.css";
 
 export default function Calendar(props) {
     return (
-        <div>
+        <div className='calendar'>
             <DatePicker
                     dateFormat="yyyy-MM-dd"
                     selected={props.date}
