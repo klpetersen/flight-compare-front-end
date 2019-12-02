@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import SearchList from '../components/SearchList'
 import SearchBar from '../components/SearchBar'
 import SavedSearches from '../components/SavedSearches'
+import Clouds from '../components/Clouds'
 
 export default class Search extends Component {
 
@@ -58,7 +59,7 @@ export default class Search extends Component {
     render() {
     return (
           <div className='search-container'>
-            <SearchBar findFlight={this.findFlight} signOut={this.props.signOut} {...this.props} /> 
+            <Clouds /> 
             <SearchList 
                 Carriers={this.state.Carriers} 
                 Currencies={this.state.Currencies} 
@@ -70,7 +71,13 @@ export default class Search extends Component {
             <SavedSearches 
               user_id={this.props.user_id} 
               savedSearches={this.state.savedSearches} 
-              removeFromSavedSearch={this.removeFromSavedSearch}/> 
+              removeFromSavedSearch={this.removeFromSavedSearch}
+              /> 
+            <SearchBar 
+              findFlight={this.findFlight} 
+              signOut={this.props.signOut} 
+              {...this.props} 
+              /> 
           </div>
     )
     }

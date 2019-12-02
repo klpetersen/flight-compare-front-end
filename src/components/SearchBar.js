@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import Clouds from './Clouds';
 import Date from './Calendar'
 
 export default class SearchBar extends Component {
@@ -44,7 +43,6 @@ export default class SearchBar extends Component {
     render() {
         return (
             <div className='search-bar-container'>
-                <Clouds /> 
                 <div> 
                     <form onSubmit={this.handleSubmit}>
                         <div className='search-label'>FROM:</div> 
