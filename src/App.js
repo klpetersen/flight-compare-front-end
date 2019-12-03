@@ -34,7 +34,7 @@ export default class App extends React.Component {
   }
 
   fetchUsers = () => { 
-    fetch('http://localhost:3000/users')
+    fetch('https://powerful-peak-13449.herokuapp.com/users')
       .then(resp => resp.json())
       .then(data => this.findUser(data))
   }

@@ -17,7 +17,7 @@ export default class SignUp extends Component {
 
     handleSubmit = (event) => { 
         event.preventDefault() 
-        fetch('http://localhost:3000/users')
+        fetch('https://powerful-peak-13449.herokuapp.com/users')
             .then(resp => resp.json())
             .then(data => this.findUser(data))
     }
@@ -35,7 +35,7 @@ export default class SignUp extends Component {
                 if (foundUser) {
                     alert('User already exists!') 
                 } else {
-                fetch('http://localhost:3000/users', {
+                fetch('https://powerful-peak-13449.herokuapp.com/users', {
                     method: "POST",
                     headers: {
                         'Content-Type': 'application/json',
