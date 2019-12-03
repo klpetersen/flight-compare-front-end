@@ -15,7 +15,7 @@ export default class Search extends Component {
       }
 
     componentDidMount() { 
-      fetch('http://localhost:3000/searches')
+      fetch('https://powerful-peak-13449.herokuapp.com/searches')
           .then(resp => resp.json())
           .then(data => this.setState({ 
               savedSearches: data

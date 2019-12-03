@@ -63,7 +63,7 @@ export default function SearchListItem(props) {
     }
                 
     const handleClick = (carrier, direct, date, departCity, destination, price) => {
-        fetch('http://localhost:3000/searches', { 
+        fetch('https://powerful-peak-13449.herokuapp.com/searches', { 
             method: 'POST', 
             headers: {
                 'Content-Type': 'application/json',

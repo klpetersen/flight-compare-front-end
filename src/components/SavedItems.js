@@ -29,7 +29,7 @@ export default class SavedItems extends React.Component {
         let elementId = event.target.parentElement.parentElement.id
         elementId = parseInt(elementId)
         let foundSearch = this.props.savedSearches.find(search => search.id === elementId) 
-        fetch(`http://localhost:3000/searches/${foundSearch.id}`, {
+        fetch(`https://powerful-peak-13449.herokuapp.com/searches/${foundSearch.id}`, {
             method: 'DELETE'
         }).then(resp => resp.json()).then(data => this.props.removeFromSavedSearch(data))
     }
