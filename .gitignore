@@ -22,4 +22,4 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
-REACT_APP_API_BASE="http://localhost:3001/api/v1"
+REACT_APP_API_BASE="postgres://byrvueaartogiw:f7b4a5c2a6304dc0a143f7fb6ff04fa8fedaec30d59f5e619e75adbfbbaf2a14@ec2-54-83-55-122.compute-1.amazonaws.com:5432/det2ce6mqbqeqi"
