@@ -14,6 +14,7 @@ export default class App extends React.Component {
   }
 
   componentDidMount() { 
+    alert("Password is not secure! If signing up, please do not use a password that you prefer to keep secret! Thank you!")
     if(localStorage.user_id){ 
       this.fetchUsers()
     }
